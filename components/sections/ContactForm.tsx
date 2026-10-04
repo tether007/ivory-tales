@@ -55,7 +55,7 @@ export default function ContactForm() {
   return (
     <div className="mx-auto w-full max-w-[786px] bg-white">
       {/* Header bar */}
-      <div className="bg-[#bfad98] py-3 text-center text-[13px] uppercase tracking-[0.3em] text-white">
+      <div className="bg-[#636B2F] py-3 text-center text-[13px] uppercase tracking-[0.3em] text-white">
         For Inquiries
       </div>
 
