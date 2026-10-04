@@ -1,11 +1,14 @@
-import PageCover from "@/components/sections/PageCover"
-import UnderConstruction from "@/components/sections/UnderConstruction"
+import type { Metadata } from "next";
+import PageCover from "@/components/sections/PageCover";
+import AboutSection from "@/components/sections/AboutSection";
 
-export default function ServicesPage(){
-    return(
-        <main>
-        <PageCover src="/covers/contact.png" alt="Couple walking at sunset" />
-        {/* <UnderConstruction pageName="Services" /> */}
-        </main>
-    )
+export const metadata: Metadata = { title: "About" };
+
+export default function AboutPage() {
+  return (
+    <main>
+      <PageCover src="/covers/contact.jpg" alt="Couple walking at sunset" title="About" />
+      <AboutSection />
+    </main>
+  );
 }
