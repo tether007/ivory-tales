@@ -20,10 +20,10 @@ export default function ContactIntro() {
           className="h-12 w-auto brightness-0"
         />
 
-        <h2 className="mt-8 font-serif text-3xl font-light text-[#c8b6a2] md:text-4xl">
+        <h2 className="mt-8 font-serif text-3xl font-light text-[#0D1B3D]  md:text-4xl">
           We can&rsquo;t wait to hear from you!
         </h2>
-        <p className="mt-4 font-serif text-xl font-light text-[#c8b6a2] md:text-2xl">
+        <p className="mt-4 font-serif text-xl font-light text-[#0D1B3D] md:text-2xl">
           We are currently accepting clients for full-service planning.
         </p>
 
