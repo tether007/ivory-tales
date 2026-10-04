@@ -16,7 +16,7 @@ const slides = [
   {
     title: "Weddings",
     text: "We craft weddings that feel deeply personal, with thoughtful details, intentional design and calm, seamless execution that brings your love story to life.",
-    src: "/services/wedding.jpg",
+    src: "/services/marriages.jpg",
     alt: "Couple under a floral wedding arch",
     href: "/wedding",
   },
