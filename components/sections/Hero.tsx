@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Put these 3-4 images in /public/hero/ (landscape, ~2400px wide, compressed)
 const slides = [
   { src: "/hero/1.jpg", alt: "Outdoor ceremony aisle lined with flowers", line1: "Events that elevate", line2: "your brand" },
   { src: "/hero/2.jpg", alt: "Conference hall with stage lighting", line1: "Your day", line2: "designed with heart" },
@@ -73,7 +72,7 @@ export default function Hero() {
 
       {/* Top bar */}
       <header
-        className={`absolute inset-x-0 top-0 z-20 flex items-center justify-between px-8 py-8 transition-opacity duration-300 md:px-24 ${
+        className={`absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 py-6 transition-opacity duration-300 sm:px-8 lg:px-24 lg:py-8 ${
           menuOpen ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
       >
@@ -84,15 +83,25 @@ export default function Hero() {
             width={210}
             height={114}
             priority
-            className="h-12 w-auto md:h-16"
+            className="h-10 w-auto sm:h-12 lg:h-16"
           />
         </Link>
+
+        {/* Mobile + tablet: three-line icon. Desktop (lg+): "MENU" text. */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="font-serif text-4xl font-light tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          aria-label="Open menu"
           aria-expanded={menuOpen}
+          className="-mr-3 p-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mr-0 lg:p-0"
         >
-          MENU
+          <span className="flex flex-col gap-[6px] lg:hidden" aria-hidden>
+            <span className="block h-[1.5px] w-7 bg-current" />
+            <span className="block h-[1.5px] w-7 bg-current" />
+            <span className="block h-[1.5px] w-7 bg-current" />
+          </span>
+          <span className="hidden font-serif text-4xl font-light tracking-wide lg:inline">
+            MENU
+          </span>
         </button>
       </header>
 
@@ -148,7 +157,7 @@ export default function Hero() {
         aria-label="Site menu"
       >
         {/* Same position as the hero header so nothing jumps */}
-        <div className="flex items-center justify-between px-8 py-8 md:px-24">
+        <div className="flex items-center justify-between px-5 py-6 sm:px-8 lg:px-24 lg:py-8">
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
@@ -161,14 +170,14 @@ export default function Hero() {
               alt="Ivory Tales"
               width={160}
               height={64}
-              className="h-12 w-auto md:h-16"
+              className="h-10 w-auto sm:h-12 lg:h-16"
             />
           </Link>
           <button
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
             aria-label="Close menu"
-            className="p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="-mr-3 p-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mr-0"
           >
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <path d="M3 3l16 16M19 3L3 19" />
@@ -177,7 +186,7 @@ export default function Hero() {
         </div>
 
         {/* Right-aligned links, staggered fade-in */}
-        <nav className="flex flex-1 flex-col items-end justify-center gap-7 px-8 pb-24 md:gap-8 md:px-24">
+        <nav className="flex flex-1 flex-col items-end justify-center gap-7 px-5 pb-24 sm:px-8 md:gap-8 lg:px-24">
           {links.map((l, i) => (
             <Link
               key={l.href}
@@ -206,7 +215,6 @@ export default function Hero() {
           </a>
         </nav>
       </div>
-
     </section>
   );
 }
