@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Put these 3-4 images in /public/hero/ (landscape, ~2400px wide, compressed)
 const slides = [
   { src: "/hero/1.jpg", alt: "Outdoor ceremony aisle lined with flowers", line1: "Events that elevate", line2: "your brand" },
   { src: "/hero/2.jpg", alt: "Conference hall with stage lighting", line1: "Your day", line2: "designed with heart" },
@@ -43,7 +44,7 @@ export default function Hero() {
   }, [menuOpen]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black text-white">
+    <section className="relative aspect-[6/9] w-full overflow-hidden bg-black text-white md:aspect-auto md:h-screen">
       {/* Slides: stacked, crossfading via opacity */}
       {slides.map((s, i) => (
         <div
@@ -60,7 +61,7 @@ export default function Hero() {
             priority={i === 0}
             sizes="100vw"
             className={`object-cover motion-safe:transition-transform motion-safe:ease-linear ${
-              i === index ? "scale-110" : "scale-100"
+-              i === index ? "scale-110" : "scale-100"
             }`}
             style={{ transitionDuration: `${INTERVAL + 1600}ms` }}
           />
@@ -109,7 +110,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
         <h1
           key={index}
-          className={`font-serif animate-hero-text text-5xl font-light leading-[1.1] md:text-7xl lg:text-8xl`}
+          className={`font-serif animate-hero-text text-3xl font-light leading-[1.1] sm:text-5xl md:text-7xl lg:text-8xl`}
         >
           {slides[index].line1}
           <br />
@@ -118,7 +119,7 @@ export default function Hero() {
       </div>
 
       {/* Logo mark under the headline */}
-      <div className="pointer-events-none absolute bottom-28 left-1/2 z-10 -translate-x-1/2 md:bottom-32">
+      <div className="pointer-events-none absolute bottom-28 left-1/2 z-10 hidden -translate-x-1/2 md:block md:bottom-32">
         <Image
           src="/logo.svg"
           alt=""
@@ -129,7 +130,7 @@ export default function Hero() {
       </div>
 
       {/* Slide indicators */}
-      <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+      <div className="absolute bottom-1 left-1/2 z-20 flex -translate-x-1/2 gap-3 md:bottom-10">
         {slides.map((_, i) => (
           <button
             key={i}
