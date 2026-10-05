@@ -19,7 +19,7 @@ export default function IntroSection() {
 
         <p className="text-base font-serif leading-9 text-foreground md:text-lg md:leading-10 md:text-[20px]">
           From a 15,000-person family day to an intimate breakfast meet-up,
-          Eventive India designs events that engage your audience and carry your
+          Ivory Tales designs events that engage your audience and carry your
           brand story well beyond the day itself.
         </p>
       </div>
