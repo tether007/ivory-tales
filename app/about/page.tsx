@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <main>
-      <PageCover src="/covers/contact.jpg" alt="Couple walking at sunset" title="About" />
+      <PageCover src="/covers/contact.png" alt="Couple walking at sunset" title="About" />
       <AboutSection />
     </main>
   );

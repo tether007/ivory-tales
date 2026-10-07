@@ -43,7 +43,7 @@ export default function GetInTouch() {
           {/* The image bleeds off the left edge and sits inside the outline */}
           <div className="absolute bottom-[19px] left-0 right-2 top-[18px] z-10 overflow-hidden">
             <Image
-              src="/cta/toast.jpg"
+              src="/cta/lets-meet.jpg"
               alt="Two guests clinking glasses in a toast"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

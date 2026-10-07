@@ -84,7 +84,7 @@ export default function Hero() {
             width={210}
             height={114}
             priority
-            className="h-10 w-auto sm:h-12 lg:h-16"
+            className="h-10 h-auto w-auto sm:h-12 lg:h-16 "
           />
         </Link>
 

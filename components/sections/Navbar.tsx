@@ -12,7 +12,15 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Navbar() {
+type NavbarProps = {
+  nameLogo?: string | null;
+  nameLogoAlt?: string;
+};
+
+export default function Navbar({
+  nameLogo = null,
+  nameLogoAlt = "Ivory Tales",
+}: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // true = the background behind that element is light, so it should turn black
@@ -42,9 +50,9 @@ export default function Navbar() {
         ctx.fillStyle = getComputedStyle(el).backgroundColor;
         ctx.fillRect(0, 0, 1, 1);
         const [r, g, b, a] = ctx.getImageData(0, 0, 1, 1).data;
-        if (a > 128) return 0.299 * r + 0.587 * g + 0.114 * b > 140; // first opaque background wins
+        if (a > 128) return 0.299 * r + 0.587 * g + 0.114 * b > 140;
       }
-      return true; // nothing found: page background is light
+      return true;
     };
 
     const measure = () => {
@@ -66,7 +74,7 @@ export default function Navbar() {
     };
 
     onScroll();
-    const t = setTimeout(onScroll, 400); // re-check after images/layout settle
+    const t = setTimeout(onScroll, 400);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     window.addEventListener("load", onScroll);
@@ -112,15 +120,45 @@ export default function Navbar() {
             } ${logoOnLight ? "brightness-0" : ""}`}
           />
         </Link>
+
+        {/* Optional centered name-logo */}
+        {nameLogo && (
+          <Link
+            href="/"
+            aria-label={nameLogoAlt}
+            className="absolute left-1/2 -translate-x-1/2"
+          >
+            <Image
+              src={nameLogo}
+              alt={nameLogoAlt}
+              width={220}
+              height={80}
+              priority
+              className="h-auto w-auto max-w-[180px] md:max-w-[220px]"
+            />
+          </Link>
+        )}
+
         <button
           ref={menuRef}
           onClick={() => setMenuOpen(true)}
           aria-expanded={menuOpen}
-          className={`font-serif text-4xl font-light tracking-wide transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${
+          aria-label="Open menu"
+          className={`transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${
             menuOnLight ? "text-black" : "text-white"
           }`}
         >
-          MENU
+          {/* Mobile hamburger */}
+          <span className="flex h-5 w-6 flex-col justify-between md:hidden">
+            <span className="block h-[1.5px] w-full bg-current" />
+            <span className="block h-[1.5px] w-full bg-current" />
+            <span className="block h-[1.5px] w-full bg-current" />
+          </span>
+
+          {/* Desktop MENU */}
+          <span className="hidden font-serif text-4xl font-light tracking-wide md:block">
+            MENU
+          </span>
         </button>
       </header>
 
@@ -149,13 +187,22 @@ export default function Navbar() {
               className="h-12 w-auto md:h-16"
             />
           </Link>
+
           <button
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
             aria-label="Close menu"
             className="p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            >
               <path d="M3 3l16 16M19 3L3 19" />
             </svg>
           </button>
@@ -168,20 +215,31 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setMenuOpen(false)}
               tabIndex={menuOpen ? 0 : -1}
-              style={{ transitionDelay: menuOpen ? `${150 + i * 80}ms` : "0ms" }}
+              style={{
+                transitionDelay: menuOpen ? `${150 + i * 80}ms` : "0ms",
+              }}
               className={`font-serif text-5xl font-light text-[#D4AF37] transition-all duration-700 hover:opacity-60 md:text-6xl ${
-                menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                menuOpen
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-3 opacity-0"
               }`}
             >
               {l.label}
             </Link>
           ))}
+
           <a
             href="mailto:ivorytalesevents@gmail.com"
             tabIndex={menuOpen ? 0 : -1}
-            style={{ transitionDelay: menuOpen ? `${150 + links.length * 80}ms` : "0ms" }}
+            style={{
+              transitionDelay: menuOpen
+                ? `${150 + links.length * 80}ms`
+                : "0ms",
+            }}
             className={`mt-4 text-xs tracking-[0.3em] transition-all duration-700 hover:opacity-60 ${
-              menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+              menuOpen
+                ? "translate-y-0 opacity-100"
+                : "translate-y-3 opacity-0"
             }`}
           >
             ivorytalesevents@gmail.com

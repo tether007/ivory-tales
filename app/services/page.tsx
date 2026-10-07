@@ -18,11 +18,11 @@ export default function ServicesPage() {
       {/* Intro: same gray as the first showcase row so the two flow together */}
       <section className="flex flex-col items-center bg-[#f4f4f4] px-6 py-12 text-center md:py-16">
         <Image
-          src="/services-logo.png"
+          src="/hero-logo.png"
           alt="Ivory Tales"
-          width={80}
-          height={80}
-          className="h-12 w-auto brightness-0"
+          width={100}
+          height={100}
+          className="h-14 w-auto brightness-0 sm:h-20 lg:h-28"
         />
         <h2 className="mt-6 max-w-xl font-serif text-3xl font-light text-[#0D1B3D] md:text-4xl">
           Serving every important occasion
