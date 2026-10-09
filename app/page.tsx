@@ -18,6 +18,7 @@ export default function Home() {
       {/* wait for client's opinion */}
       {/* <Reveal><SGallery/></Reveal>  */}
       <Reveal><HoverTextReveal/></Reveal>
+      <Reveal><SGallery/></Reveal>
     </main>
   );
 }
