@@ -65,7 +65,8 @@ export default function ParallaxSection({
               {banner.text}
             </p>
 
-            <Link
+            {/* unneccesary */}
+            {/* <Link
               href={banner.href}
               className="mt-10 inline-flex items-center gap-4 bg-white px-8 py-4 text-xs uppercase tracking-wide text-black transition-colors hover:bg-[#D4AF37] md:px-10 md:text-sm"
             >
@@ -81,7 +82,7 @@ export default function ParallaxSection({
               >
                 <path d="M0 5h27M23 1l4 4-4 4" />
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </section>
       </div>

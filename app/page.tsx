@@ -5,6 +5,7 @@ import IntroSection from "@/components/sections/IntroSection";
 import ServicesSlider from "@/components/sections/ServicesSlider";
 import Reveal from "@/components/sections/Reveal";
 import GetInTouch from "@/components/sections/GetInTouch";
+import HoverTextReveal from "@/components/sections/HoverTextReveal";
 
 
 export default function Home() {
@@ -14,7 +15,9 @@ export default function Home() {
       <Reveal><IntroSection/></Reveal>
       <Reveal><ServicesSlider/></Reveal>
       <GetInTouch/>
-      <Reveal><SGallery/></Reveal>
+      {/* wait for client's opinion */}
+      {/* <Reveal><SGallery/></Reveal>  */}
+      <Reveal><HoverTextReveal/></Reveal>
     </main>
   );
 }

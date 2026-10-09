@@ -43,11 +43,11 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f3eeec] px-6 py-14 text-[#0D1B3D] md:px-24 md:py-16">
+    <footer className="bg-[#f3eeec] px-4 py-8 text-[#0D1B3D] sm:px-6 sm:py-10 md:px-24 md:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="grid items-center gap-10 text-center md:grid-cols-3 md:text-left">
+        <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-3 md:gap-10 md:text-left text-center">
           {/* Left: links */}
-          <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:justify-start">
+          <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:gap-x-6 sm:text-sm md:justify-start">
             {links.map((l) => (
               <Link
                 key={l.href}
@@ -66,15 +66,15 @@ export default function Footer() {
               alt="Ivory Tales"
               width={160}
               height={80}
-              className="h-20 w-auto brightness-0"
+              className="h-14 w-auto brightness-0 sm:h-16 md:h-20"
             />
           </Link>
 
           {/* Right: CTA + social icons */}
-          <div className="flex flex-col items-center gap-5 md:flex-row md:justify-end">
+          <div className="flex flex-col items-center gap-3 sm:gap-4 md:flex-row md:justify-end">
             <Link
               href="/contact"
-              className="bg-[#D4AF37] px-7 py-3 text-sm tracking-[0.12em] text-[#0D1B3D] transition-colors hover:bg-[#0D1B3D] hover:text-white"
+              className="bg-[#D4AF37] px-5 py-2.5 text-xs tracking-[0.1em] text-[#0D1B3D] transition-colors hover:bg-[#0D1B3D] hover:text-white sm:px-7 sm:py-3 sm:text-sm sm:tracking-[0.12em]"
             >
               Book a Consultation
             </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-8 w-8 items-center justify-center bg-black text-white transition-opacity hover:opacity-70"
+                    className="flex h-7 w-7 items-center justify-center bg-black text-white transition-opacity hover:opacity-70 sm:h-8 sm:w-8"
                   >
                     {s.icon}
                   </a>
@@ -97,8 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#0D1B3D]/15 pt-6 text-[11px] uppercase tracking-[0.25em] md:flex-row">
-          <p>Copyright © {new Date().getFullYear()} Ivory Tales</p>
+        <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-[#0D1B3D]/15 pt-4 text-[9px] uppercase tracking-[0.18em] sm:mt-10 sm:gap-3 sm:pt-6 sm:text-[11px] sm:tracking-[0.25em] md:flex-row">          <p>Copyright © {new Date().getFullYear()} Ivory Tales</p>
           <p>Bengaluru, India</p>
         </div>
       </div>

@@ -60,10 +60,10 @@ export default function GetInTouch() {
               : "translate-y-4 opacity-0"
           }`}
         >
-          <h2 className="font-serif text-4xl font-light tracking-wide text-black small-caps lg:text-6xl">
+          <h2 className="font-serif text-4xl font-light tracking-wide text-[#1E2A44] small-caps lg:text-6xl">
             Let&rsquo;s Talk
           </h2>
-          <p className="mt-3 font-serif text-xl tracking-wide text-black small-caps lg:text-3xl">
+          <p className="mt-3 font-serif text-xl tracking-wide text-[#1E2A44] small-caps lg:text-3xl">
             Get in touch
           </p>
           <Link
