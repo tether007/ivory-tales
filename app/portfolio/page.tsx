@@ -6,7 +6,7 @@ import Reveal from "@/components/sections/Reveal"
 export default function ServicesPage(){
     return(
         <main>
-        <PageCover src="/covers/contact.png" alt="Couple walking at sunset" />
+        <PageCover src="/covers/portfolio.jpg" alt="Couple walking at sunset"  title="Portfolio" />
         {/* <UnderConstruction pageName="Services" /> */}
         <Reveal><PortfolioGallery title="Weddings, Corporate & Experiences"/></Reveal>
         {/* <Reveal><PortfolioGallery title="Corporate & Social Events in Bengaluru" /></Reveal> */}

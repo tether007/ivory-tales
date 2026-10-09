@@ -5,13 +5,13 @@ import Image from "next/image";
 
 // Edit the copy here
 const content = {
-  title: "Our Story",
+  title: "Our Motto",
   image: "/about/story.jpg",
   imageAlt: "Elegantly styled event venue",
   paragraphs: [
-    "At The Ivory Tales, our objective is to bring creativity, attention to detail, and effortless execution together — delivering events that are beautifully imagined, seamlessly managed, and deeply memorable.",
-    "To create thoughtfully crafted experiences that reflect the people, stories, and moments behind every occasion.",
-    "We strive to build lasting relationships with our clients by turning their vision into experiences they can truly call their own.",
+    "At The Ivory Tales, we believe every celebration should be as unique as the people behind it. Our approach to event management is rooted in understanding your vision, preferences, and personal story, translating them into thoughtfully tailored experiences where every detail feels intentional and every moment feels truly yours."    ,
+    "We work closely with our clients at every stage of the journey, collaborating to understand their ideas, offering thoughtful guidance, and carefully personalising each element to reflect their individuality. From the initial concept to the final execution, we ensure that every decision aligns with your vision and brings your ideas to life with creativity, precision, and care.",    
+    "Our goal is to create more than just beautifully managed events — we create experiences that feel personal, meaningful, and unforgettable. By building genuine relationships with our clients and embracing what makes each occasion special, we transform individual visions into distinctive celebrations that tell your story, reflect your style, and leave lasting memories.",
   ],
   quote:
     "Our team draws on a diverse background of professional service industries, and we share one common goal: to create high-quality event experiences with innovation, collaboration, excellence, empathy, enthusiasm and integrity.",

@@ -10,7 +10,7 @@ export default function ServicesPage() {
   return (
     <main>
       <PageCover
-        src="/covers/contact.png"
+        src="/covers/services.jpg"
         alt="Elegantly set event venue"
         title="Services"
       />
